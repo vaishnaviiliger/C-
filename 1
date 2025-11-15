@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int grades, students;
+    cout << "Enter number of grades: ";
+    cin >> grades;
+    cout << "Enter number of students in each grade: ";
+    cin >> students;
+    int total = grades * students;
+    for (int i = 1; i <= grades; i++) {
+        char grade;
+        cout << "\nEnter grade letter (A/B/C/D/F): ";
+        cin >> grade;
+        int count = 0;
+        float marks, sum = 0;
+        for (int j = 1; j <= students; j++) {
+            cout << "Enter marks for student " << j ;
+            cin >> marks;
+            sum = sum + marks;
+            count++;
+        }
+        float avg = sum / count;
+        float percent = (float(count) / total) * 100;
+        cout << "\nGrade " << grade << " average = " << avg << endl;
+        cout << "Percentage of students = " << percent << "%\n";
+    }
+    return 0;
+}
