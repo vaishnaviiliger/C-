@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+private:
+    string name;
+    float basicSalary;
+    float TA;
+    float DA; 
+    float grossSalary;
+public:
+    void enterDetails();   
+    void calculateSalary(); 
+    void displaySalary();   
+};
+void Employee::enterDetails() {
+    cout << "Enter employee name: ";
+    cin >> name;
+    cout << "Enter basic salary: ";
+    cin >> basicSalary;
+}
+void Employee::calculateSalary() {
+    TA = 0.15 * basicSalary;
+    DA = 0.30 * basicSalary;
+    grossSalary = basicSalary + TA + DA;
+}
+void Employee::displaySalary() {
+    cout << "\nEmployee Salary Details:\n";
+    cout << "Name: " << name << endl;
+    cout << "Basic Salary: " << basicSalary << endl;
+    cout << "TA (15%): " << TA << endl;
+    cout << "DA (30%): " << DA << endl;
+    cout << "Gross Salary: " << grossSalary << endl;
+}
+int main() {
+    Employee e;
+    e.enterDetails();       
+    e.calculateSalary();    
+    e.displaySalary();      
+    return 0;
+}
