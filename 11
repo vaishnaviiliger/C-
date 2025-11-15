@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int rollNo;
+    string name;
+    int prn;
+    float totalMarks;
+    float percentage;
+public:
+    Student(int r, string n, int p, float t) {
+        rollNo = r;
+        name = n;
+        prn = p;
+        totalMarks = t;
+        percentage = (totalMarks / 500) * 100;
+    }
+    void displayData() {
+        cout << "\n----- Student Details -----" << endl;
+        cout << "Name: " << name << endl;
+        cout << "Roll No: " << rollNo << endl;
+        cout << "PRN: " << prn << endl;
+        cout << "Total Marks: " << totalMarks << endl;
+        cout << "Percentage: " << percentage << "%" << endl;
+
+        if (percentage >= 75)
+            cout << "Result: Distinction" << endl;
+        else if (percentage >= 60)
+            cout << "Result: First Class" << endl;
+        else if (percentage >= 50)
+            cout << "Result: Second Class" << endl;
+        else if (percentage >= 35)
+            cout << "Result: Pass" << endl;
+        else
+            cout << "Result: Fail" << endl;
+    }
+};
+int main() {
+    int rollNo;
+    string name;
+    int prn;
+    float totalMarks;
+    cout << "Enter Roll No: ";
+    cin >> rollNo;
+    cout << "Enter Name: ";
+    cin >> name;
+    cout << "Enter PRN: ";
+    cin >> prn;
+    cout << "Enter Total Marks (out of 500): ";
+    cin >> totalMarks;
+    Student s(rollNo, name, prn, totalMarks);
+    s.displayData();
+    return 0;
+}
