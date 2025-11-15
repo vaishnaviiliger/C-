@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+class Number {
+private:
+    int num;
+    int square;
+    int cube;
+public:
+    Number() {
+        cout << "Enter a number: ";
+        cin >> num;
+        square = num*num;
+        cout << "Square of number:"<< square << endl;
+        cube = num*num*num;
+        cout << "Cube of number:" << cube << endl;
+    }
+};
+int main() {
+    Number n; 
+    return 0;
+}
