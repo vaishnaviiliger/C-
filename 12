@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+class Book {
+private:
+    int rollNo;
+    string name;
+    string authorName;
+    float price;
+    long long ISBN;
+public:
+    Book(int r, string n, string a, float p, long long i) {
+        rollNo = r;
+        name = n;
+        authorName = a;
+        price = p;
+        ISBN = i;
+    }
+
+    Book(Book &b) {
+        rollNo = b.rollNo;
+        name = b.name;
+        authorName = b.authorName;
+        price = b.price;
+        ISBN = b.ISBN;
+    }
+    void display() {
+        cout << "\n----- Book Details -----" << endl;
+        cout << "Roll No: " << rollNo << endl;
+        cout << "Book Name: " << name << endl;
+        cout << "Author Name: " << authorName << endl;
+        cout << "Price: " << price << endl;
+        cout << "ISBN: " << ISBN << endl;
+    }
+};
+int main() {
+    int rollNo;
+    string name, author;
+    float price;
+    long long isbn;
+    cout << "Enter Roll No: ";
+    cin >> rollNo;
+    cout << "Enter Book Name: ";
+    cin >> name;
+    cout << "Enter Author Name: ";
+    cin >> author;
+    cout << "Enter Price: ";
+    cin >> price;
+    cout << "Enter ISBN: ";
+    cin >> isbn;
+    Book b1(rollNo, name, author, price, isbn);
+
+    Book b2(b1);
+    cout << "\nOriginal Book (b1):";
+    b1.display();
+    cout << "\nCopied Book (b2):";
+    b2.display();
+    return 0;
+}
