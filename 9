@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+class Numbers {
+private:
+    int start, end;
+public:
+    Numbers(int s, int e) {
+        start = s;
+        end = e;
+    }
+    friend void findDivisibleBy9(Numbers n);
+};
+void findDivisibleBy9(Numbers n) {
+    int count = 0, sum = 0;
+    cout << "Numbers between " << n.start << " and " << n.end 
+         << " divisible by 9 are: " << endl;
+         
+    for (int i = n.start; i <= n.end; i++) {
+        if (i % 9 == 0) {
+            cout << i << " ";
+            count++;
+            sum += i;
+        }
+    }
+    cout << "\n\nTotal count: " << count << endl;
+    cout << "Sum of numbers divisible by 9: " << sum << endl;
+}
+int main() {
+    Numbers range(100, 200);
+    findDivisibleBy9(range);
+    return 0;
+}
