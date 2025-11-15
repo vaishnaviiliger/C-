@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class Area {
+public:
+    void area(float l, float b) {
+        cout << "Area of Rectangle = " << l * b << endl;
+    }
+    void area(float b, float h, int) {
+        cout << "Area of Triangle = " << 0.5 * b * h << endl;
+    }
+    void area(double r) {
+        cout << "Surface Area of Sphere = " << 4 * 3.14 * r * r << endl;
+    }
+};
+int main() {
+    Area a;
+    float l, b, h;
+    double r;
+    cout << "Enter length and breadth of rectangle: ";
+    cin >> l >> b;
+    a.area(l, b);
+    cout << "\nEnter base and height of triangle: ";
+    cin >> b >> h;
+    a.area(b, h, 1); 
+    cout << "\nEnter radius of sphere: ";
+    cin >> r;
+    
+    a.area(r);
+    return 0;
+}
