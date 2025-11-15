@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class Number {
+private:
+    int num;
+public:
+    void input() {
+        cout << "Enter a number: ";
+        cin >> num;
+    }
+    void operator++() {
+        ++num;
+    }
+    void display() {
+        cout << "Number = " << num << endl;
+    }
+};
+int main() {
+    Number n;
+    n.input();
+
+    cout << "Before increment: ";
+    n.display();
+    ++n;  
+    cout << "After increment: ";
+    n.display();
+    return 0;
+}
